@@ -1,11 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Listado de Imágenes y Gráficos</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <!-- ApexCharts -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <style>
+
+        body {
+            background: linear-gradient(180deg, #e6fdff 0%, #c9fbff 40%, #ffffff 100%);
+            min-height: 100vh;
+        }
+
+        /* Le damos al contenedor un fondo semitransparente para mejorar la legibilidad */
+        .container {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .titulo-principal {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            color: #014f86;
+            text-shadow: 0 4px 12px rgba(1,79,134,0.08);
+            padding: 6px 12px;
+            display: inline-block;
+            border-radius: 8px;
+            background: linear-gradient(90deg, rgba(0,212,255,0.08), rgba(0,128,255,0.04));
+            border: 1px solid rgba(0,128,255,0.08);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>prueba</h1>
+
+<div class="container my-4">
+
+    <h1 class="mb-4 text-center titulo-principal">Imágenes Bits y Vectoriales</h1>
+
+    <!-- Selectores -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <label for="rowSelector" class="form-label">Número de filas</label>
+            <select id="rowSelector" class="form-select" title="Número de filas">
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <label for="dataSelector" class="form-label">Conjunto de datos</label>
+            <select id="dataSelector" class="form-select" title="Conjunto de datos">
+                <option value="dataset1">Dataset 1</option>
+                <option value="dataset2">Dataset 2</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Listado de imágenes -->
+    <div id="imageList" class="row g-3 mb-5"></div>
+
+    <!-- Gráficos -->
+    <div class="row">
+        <div class="col-md-6">
+            <div id="barChart"></div>
+        </div>
+        <div class="col-md-6">
+            <div id="donutChart"></div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="script.js"></script>
+
 </body>
 </html>
